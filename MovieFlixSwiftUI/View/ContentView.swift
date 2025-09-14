@@ -32,6 +32,7 @@ struct ContentView: View {
                     Button("Search") {
                         Task {
                             await viewModel.searchMovies()
+                            isSearching = true
                         }
                     }
                     .padding(.trailing)
@@ -52,6 +53,7 @@ struct ContentView: View {
                                     await viewModel.loadPopularMovies()
                                 } else {
                                     await viewModel.searchMovies()
+                                    isSearching = true
                                 }
                             }
                         }
